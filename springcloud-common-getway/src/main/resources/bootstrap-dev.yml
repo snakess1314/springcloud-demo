@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: nacos-common-getway
+  cloud:
+    nacos:
+      discovery:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 6c5acb58-e8cb-4d05-81e2-177b1b7aab10
+        file-extension: yml
+        extension-configs:
+        - data-id: nacos-common.yml
+          group: DEFAULT_GROUP
+          refresh: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true #动态匹配服务名的路由
+#      routes:
+#        - id: gate_route
+#          uri: http://localhost:8085
+#          predicates:
+#              ## 当请求的路径为gate、rule开头的时，转发到http://localhost:9023服务器上
+#          - Path=/echo/**,/sms/**,/myapp/**
+#          filters:
+
+#            - RedirectTo=302, https://www.baidu.com
+#          - PrefixPath=/test
+# 配置日志级别，方别调试
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

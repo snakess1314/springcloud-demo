@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: nacos-user-consumer
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8729
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            dataId: user-consumer-sentinel
+            groupId: DEFAULT_GROUP
+            namespace: 2dd3b6bc-01e0-4def-a9d0-60136134de80
+            data-type: json
+            rule-type: flow
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 2dd3b6bc-01e0-4def-a9d0-60136134de80
+        file-extension: yml
+        extension-configs:
+          - data-id: nacos-common.yml
+            group: DEFAULT_GROUP
+            refresh: true

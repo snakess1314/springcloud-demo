@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: nacos-common-message
+  cloud:
+    nacos:
+      discovery:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 2dd3b6bc-01e0-4def-a9d0-60136134de80
+        file-extension: yml
+        extension-configs:
+        - data-id: nacos-common.yml
+          group: DEFAULT_GROUP
+          refresh: true
+        refresh-enabled: true

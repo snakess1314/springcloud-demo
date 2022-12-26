@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: staffMobile
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.20.23.21:8848
+        namespace: dev-wuzhaoqiang-technical-template-namespace
+      config:
+        server-addr: 172.20.23.21:8848
+        namespace: dev-wuzhaoqiang-technical-template-namespace
